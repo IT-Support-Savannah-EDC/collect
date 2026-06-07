@@ -84,8 +84,39 @@ android {
         vectorDrawables.useSupportLibrary = true
     }
 
+    flavorDimensions "brand"
+
+    productFlavors {
+        //ODK Flavor
+        odk {
+            dimension "brand"
+            //default app settings/configurations
+        }
+
+        // Savannah EDC Flavor
+        sedc {
+            dimension "brand"
+            applicationId 'com.savannahedc.android'
+            versionNameSuffix "-sedc"
+        }
+
+        // Yola EDC Flavor
+        yedc {
+            dimension "brand"
+            applicationId 'com.yedc.android'
+            versionNameSuffix "-yedc"
+        }
+
+        // Jos EDC Flavor
+        jedc {
+            dimension "brand"
+            applicationId 'com.jedc.android'
+            versionNameSuffix "-jedc"
+        }
+    }
+
     base {
-        archivesName = "ODK-Collect"
+        archivesName = "Collect-App"
     }
 
     signingConfigs {
