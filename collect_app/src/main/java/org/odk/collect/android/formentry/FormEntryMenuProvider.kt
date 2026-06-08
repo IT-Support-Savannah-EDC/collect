@@ -24,6 +24,7 @@ import org.odk.collect.audiorecorder.recording.AudioRecorder
 import org.odk.collect.settings.SettingsProvider
 import org.odk.collect.settings.keys.ProjectKeys
 import org.odk.collect.settings.keys.ProtectedProjectKeys
+import org.odk.collect.shared.FlavorRegistry
 import org.odk.collect.strings.localization.getLocalizedString
 
 class FormEntryMenuProvider(
@@ -74,6 +75,10 @@ class FormEntryMenuProvider(
             } else {
                 activity.getLocalizedString(org.odk.collect.strings.R.string.track_location_off)
             }
+        }
+
+        if (!FlavorRegistry.showTrackLocation) {
+            menu.findItem(R.id.track_location)?.isVisible = false
         }
 
         menu.findItem(R.id.menu_add_repeat).isVisible = formEntryViewModel.canAddRepeat()

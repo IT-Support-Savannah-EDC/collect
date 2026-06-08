@@ -144,9 +144,13 @@ public class Collect extends Application implements
         super.onCreate();
         singleton = this;
 
-        // Fla
+        // Flavor registry
         FlavorRegistry.INSTANCE.setOfflineLayersUrl(getString(R.string.offline_layers_url));
         FlavorRegistry.INSTANCE.setQrFolderUrl(getString(R.string.qr_folder_url));
+        FlavorRegistry.INSTANCE.setShowTrackLocation(false);
+        FlavorRegistry.INSTANCE.setShowFormVersion(false);
+        FlavorRegistry.INSTANCE.setShowFormVersion(false);
+        FlavorRegistry.INSTANCE.setShowFormId(false);
 
         CrashHandler.install(this).launchApp(
                 () -> ExternalFilesUtils.testExternalFilesAccess(this),

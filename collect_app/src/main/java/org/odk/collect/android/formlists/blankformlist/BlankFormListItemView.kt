@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.widget.FrameLayout
 import org.odk.collect.android.databinding.BlankFormListItemBinding
+import org.odk.collect.shared.FlavorRegistry
 import org.odk.collect.strings.R.string
 import timber.log.Timber
 import java.text.SimpleDateFormat
@@ -45,6 +46,15 @@ class BlankFormListItemView(context: Context) : FrameLayout(context) {
         } catch (e: IllegalArgumentException) {
             Timber.e(e)
             ""
+        }
+
+        // Flavor
+        if (!FlavorRegistry.showFormVersion) {
+            binding.formVersion.visibility = GONE
+        }
+
+        if (!FlavorRegistry.showFormId) {
+            binding.formId.visibility = GONE
         }
     }
 

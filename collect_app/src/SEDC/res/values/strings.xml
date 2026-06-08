@@ -566,7 +566,7 @@
     <string name="offline_layer_dialog_description">Select the offline layer to use for all maps in this project. You can add options to the list by selecting an MBTiles file from your device and also delete existing layers from the list.</string>
 
     <!-- Text of button user can press to get help when setting up Offline Layers -->
-    <string name="get_help_with_offline_layers">Learn more about adding MBTiles.</string>
+    <string name="get_help_with_offline_layers">Download Cadastral Layers</string>
 
     <!-- Text for button that lets the user select a offline layer on their device to add -->
     <string name="add_layer">Add layers</string>
