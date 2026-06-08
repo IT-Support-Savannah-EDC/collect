@@ -18,11 +18,9 @@ package org.odk.collect.android.external;
 
 import android.net.Uri;
 
-import com.mohamadian.persianjodatime.BuildConfig;
-
 public final class InstancesContract {
 
-    public static final String AUTHORITY = BuildConfig.APPLICATION_ID + ".provider.odk.instances";
+    public static final String AUTHORITY = "com.savannahedc.android" + ".provider.odk.instances";
     public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd.odk.instance";
     public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.odk.instance";
 
