@@ -91,7 +91,7 @@ the specific language governing permissions and limitations under the License.
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="${applicationId}.provider"
+            android:authorities="org.odk.collect.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -278,7 +278,7 @@ the specific language governing permissions and limitations under the License.
             android:targetActivity=".activities.FormDownloadListActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="org.odk.collect.android.FORM_DOWNLOAD" />
+                <action android:name="org.odk.collect.FORM_DOWNLOAD" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="vnd.android.cursor.dir/vnd.odk.form" />
             </intent-filter>
