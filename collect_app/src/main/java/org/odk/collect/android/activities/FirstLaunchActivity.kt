@@ -1,5 +1,7 @@
 package org.odk.collect.android.activities
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.SpannableStringBuilder
 import androidx.activity.viewModels
@@ -28,6 +30,7 @@ import org.odk.collect.mobiledevicemanagement.MDMConfigObserver
 import org.odk.collect.projects.Project
 import org.odk.collect.projects.ProjectsRepository
 import org.odk.collect.settings.SettingsProvider
+import org.odk.collect.shared.FlavorRegistry
 import org.odk.collect.strings.R
 import org.odk.collect.strings.localization.LocalizedActivity
 import javax.inject.Inject
@@ -129,7 +132,22 @@ class FirstLaunchActivity : LocalizedActivity(), CollectComposeThemeProvider {
                     }
 
                 setOnClickListener {
-                    viewModel.tryDemo()
+                    // 1. Define the URL you want to open as a String
+                    val urlToOpen = FlavorRegistry.qrFolderUrl
+
+                    // 2. Create an Intent with the ACTION_VIEW action
+                    //    This tells Android you want to view something.
+                    val intent = Intent(Intent.ACTION_VIEW)
+
+                    // 3. Set the data for the Intent. This is your URL.
+                    //    Uri.parse() converts your string URL into a format Android understands.
+                    intent.data = Uri.parse(urlToOpen)
+
+                    // 4. Start the activity (which will be the web browser)
+                    //    `this@FirstLaunchActivity` refers to your current screen (the Activity).
+                    startActivity(intent)
+
+                    //viewModel.tryDemo()
                 }
             }
         }

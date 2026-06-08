@@ -28,6 +28,7 @@ import org.odk.collect.lists.selects.SingleSelectViewModel
 import org.odk.collect.maps.databinding.OfflineMapLayersPickerBinding
 import org.odk.collect.settings.SettingsProvider
 import org.odk.collect.settings.keys.ProjectKeys
+import org.odk.collect.shared.FlavorRegistry
 import org.odk.collect.strings.localization.getLocalizedString
 import org.odk.collect.webpage.WebPageService
 
@@ -105,7 +106,7 @@ class OfflineMapLayersPickerBottomSheetDialogFragment(
         binding.mbtilesInfoGroup.addOnClickListener {
             webPageService.openWebPage(
                 requireActivity(),
-                Uri.parse("https://docs.getodk.org/collect-offline-maps/#transferring-offline-tilesets-to-devices")
+                Uri.parse(FlavorRegistry.offlineLayersUrl)
             )
         }
 

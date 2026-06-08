@@ -24,6 +24,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import org.jetbrains.annotations.NotNull;
+import org.odk.collect.android.R;
 import org.odk.collect.android.dynamicpreload.ExternalDataManager;
 import org.odk.collect.android.injection.DaggerUtils;
 import org.odk.collect.android.injection.config.AppDependencyComponent;
@@ -78,6 +79,7 @@ import org.odk.collect.selfiecamera.SelfieCameraDependencyComponent;
 import org.odk.collect.selfiecamera.SelfieCameraDependencyComponentProvider;
 import org.odk.collect.settings.SettingsProvider;
 import org.odk.collect.settings.keys.ProjectKeys;
+import org.odk.collect.shared.FlavorRegistry;
 import org.odk.collect.shared.injection.ObjectProvider;
 import org.odk.collect.shared.injection.ObjectProviderHost;
 import org.odk.collect.shared.injection.SupplierObjectProvider;
@@ -141,6 +143,10 @@ public class Collect extends Application implements
     public void onCreate() {
         super.onCreate();
         singleton = this;
+
+        // Fla
+        FlavorRegistry.INSTANCE.setOfflineLayersUrl(getString(R.string.offline_layers_url));
+        FlavorRegistry.INSTANCE.setQrFolderUrl(getString(R.string.qr_folder_url));
 
         CrashHandler.install(this).launchApp(
                 () -> ExternalFilesUtils.testExternalFilesAccess(this),
