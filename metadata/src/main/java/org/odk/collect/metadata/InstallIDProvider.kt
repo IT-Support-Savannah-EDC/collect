@@ -1,5 +1,6 @@
 package org.odk.collect.metadata
 
+import org.odk.collect.shared.FlavorRegistry
 import org.odk.collect.shared.settings.Settings
 import org.odk.collect.shared.strings.RandomString
 
@@ -22,7 +23,13 @@ class SettingsInstallIDProvider(
         }
 
     private fun generateAndStoreInstallID(): String {
-        val installID = "collect:" + RandomString.randomString(16)
+
+        val idPrefix = FlavorRegistry.idPrefix;
+
+        val randomSuffix = RandomString.randomString(16)
+
+        val installID = "$idPrefix:$randomSuffix";
+
         metaPreferences.save(preferencesKey, installID)
         return installID
     }

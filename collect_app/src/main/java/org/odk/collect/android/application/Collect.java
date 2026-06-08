@@ -154,7 +154,7 @@ public class Collect extends Application implements
         FlavorRegistry.INSTANCE.setShowAboutButton(false);
         FlavorRegistry.INSTANCE.setDefaultToLatestSaved(true);
         FlavorRegistry.INSTANCE.setShowVerionSha(false);
-
+        FlavorRegistry.INSTANCE.setIdPrefix(getString(R.string.device_id_prefix));
 
         CrashHandler.install(this).launchApp(
                 () -> ExternalFilesUtils.testExternalFilesAccess(this),
