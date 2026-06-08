@@ -13,4 +13,5 @@ object FlavorRegistry {
     var showTrackLocation: Boolean = true
     var showFormVersion: Boolean = true
     var showFormId: Boolean = true
+    var showAboutButton: Boolean = true
 }

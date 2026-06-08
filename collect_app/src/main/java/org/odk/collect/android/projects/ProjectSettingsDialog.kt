@@ -21,6 +21,7 @@ import org.odk.collect.androidshared.ui.ToastUtils
 import org.odk.collect.projects.Project
 import org.odk.collect.projects.ProjectsRepository
 import org.odk.collect.settings.SettingsProvider
+import org.odk.collect.shared.FlavorRegistry
 import javax.inject.Inject
 
 class ProjectSettingsDialog(private val viewModelFactory: ViewModelProvider.Factory) :
@@ -79,6 +80,10 @@ class ProjectSettingsDialog(private val viewModelFactory: ViewModelProvider.Fact
         binding.aboutButton.setOnClickListener {
             startActivity(Intent(requireContext(), AboutActivity::class.java))
             dismiss()
+        }
+
+        if (!FlavorRegistry.showAboutButton) {
+            binding.aboutButton.visibility = android.view.View.GONE
         }
 
         return MaterialAlertDialogBuilder(requireContext())

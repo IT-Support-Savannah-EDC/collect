@@ -151,6 +151,7 @@ public class Collect extends Application implements
         FlavorRegistry.INSTANCE.setShowFormVersion(false);
         FlavorRegistry.INSTANCE.setShowFormVersion(false);
         FlavorRegistry.INSTANCE.setShowFormId(false);
+        FlavorRegistry.INSTANCE.setShowAboutButton(false);
 
         CrashHandler.install(this).launchApp(
                 () -> ExternalFilesUtils.testExternalFilesAccess(this),
