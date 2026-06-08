@@ -14,4 +14,6 @@ object FlavorRegistry {
     var showFormVersion: Boolean = true
     var showFormId: Boolean = true
     var showAboutButton: Boolean = true
+    var defaultToLatestSaved: Boolean = true
+    var showVerionSha: Boolean = true
 }

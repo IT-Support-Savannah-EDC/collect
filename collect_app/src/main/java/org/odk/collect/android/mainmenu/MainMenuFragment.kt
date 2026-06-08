@@ -31,6 +31,7 @@ import org.odk.collect.androidshared.data.consume
 import org.odk.collect.androidshared.ui.DialogFragmentUtils
 import org.odk.collect.androidshared.ui.SnackbarUtils
 import org.odk.collect.androidshared.ui.multiclicksafe.MultiClickGuard
+import org.odk.collect.shared.FlavorRegistry
 import org.odk.collect.strings.R.string
 import org.odk.collect.webpage.WebPageService
 
@@ -246,6 +247,10 @@ class MainMenuFragment(
         if (versionSHA != null) {
             binding.versionSha.text = versionSHA
         } else {
+            binding.versionSha.visibility = View.GONE
+        }
+
+        if (!FlavorRegistry.showVerionSha) {
             binding.versionSha.visibility = View.GONE
         }
     }

@@ -75,9 +75,9 @@ class SavedFormListViewModel(
     }
 
     enum class SortOrder {
+        DATE_DESC,
         NAME_ASC,
         NAME_DESC,
-        DATE_DESC,
         DATE_ASC
     }
 }

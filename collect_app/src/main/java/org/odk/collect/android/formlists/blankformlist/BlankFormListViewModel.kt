@@ -23,6 +23,7 @@ import org.odk.collect.forms.instances.InstancesRepository
 import org.odk.collect.settings.enums.FormUpdateMode
 import org.odk.collect.settings.enums.StringIdEnumUtils.getFormUpdateMode
 import org.odk.collect.settings.keys.ProjectKeys
+import org.odk.collect.shared.FlavorRegistry
 import org.odk.collect.shared.settings.Settings
 
 class BlankFormListViewModel(
@@ -160,7 +161,11 @@ class BlankFormListViewModel(
     }
 
     private fun getSortOrder() =
-        SortOrder.entries[generalSettings.getInt(ProjectKeys.KEY_BLANK_FORM_SORT_ORDER)]
+        if (FlavorRegistry.defaultToLatestSaved && !generalSettings.contains(ProjectKeys.KEY_BLANK_FORM_SORT_ORDER)) {
+            SortOrder.LAST_SAVED // Use DATE_DESC for newest forms, or LAST_SAVED for most recently used
+        } else {
+            SortOrder.entries[generalSettings.getInt(ProjectKeys.KEY_BLANK_FORM_SORT_ORDER)]
+        }
 
     open class Factory(
         private val instancesRepository: InstancesRepository,
