@@ -14,4 +14,5 @@ object FlavorRegistry {
     var showAboutButton: Boolean = true
     var defaultToLatestSaved: Boolean = true
     var showVerionSha: Boolean = true
+    var smallIcon: Int = 0
 }

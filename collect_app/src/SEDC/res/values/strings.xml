@@ -371,8 +371,8 @@
     <string name="error_attaching_binary_file">An error occurred while attaching the media: %s</string>
 
     <!-- Displayed in form questions for which the user needs to select a value -->
-    <string name="select_value">Select value</string>
-    <string name="select_answer">Select Answer</string>
+    <!-- <string name="select_value">Select value</string> -->
+    <!-- <string name="select_answer">Select Answer</string> -->
     <!-- Displayed in form questions for which the user needs to select a value -->
     <string name="edit_value">Edit value</string>
     <!-- Displayed in form questions for which the user needs to select a value -->

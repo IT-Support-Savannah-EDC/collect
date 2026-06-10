@@ -23,6 +23,7 @@ import org.odk.collect.async.services.TaskSpecRunnerService.Companion.EXTRA_NOTI
 import org.odk.collect.async.services.TaskSpecRunnerService.Companion.EXTRA_NOTIFICATION_TITLE
 import org.odk.collect.async.services.TaskSpecRunnerService.Companion.EXTRA_SPEC_CLASS
 import org.odk.collect.icons.R
+import org.odk.collect.shared.FlavorRegistry
 
 class ForegroundServiceTaskSpecRunner(private val application: Application) : TaskSpecRunner {
     override fun run(
@@ -61,7 +62,7 @@ class TaskSpecRunnerService : Service() {
         val notificationId = intent.getIntExtra(EXTRA_NOTIFICATION_ID, -1)
         val notificationTitle = intent.getStringExtra(EXTRA_NOTIFICATION_TITLE)
         val notification = NotificationCompat.Builder(applicationContext, notificationChannel)
-            .setSmallIcon(R.drawable.ic_notification_small)
+            .setSmallIcon(FlavorRegistry.smallIcon)
             .setContentTitle(notificationTitle)
             .setPriority(NotificationCompat.PRIORITY_LOW)
             .build()

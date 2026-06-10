@@ -42,6 +42,7 @@ dependencies {
     }
 
     implementation(project(":icons"))
+    implementation(project(":shared"))
 
     testImplementation(libs.hamcrest)
     testImplementation(libs.robolectric)
